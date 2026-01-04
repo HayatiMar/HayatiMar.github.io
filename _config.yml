@@ -1,48 +1,83 @@
 # Basic Site Settings
 locale           : "en-US"
-site_theme       : "default"
-title            : "Maryam Hayati / Academic Portfolio"
+title            : "Maryam Hayati"
 title_separator  : "-"
-description      : "Maryam Hayati's academic portfolio"
+description      : "AI & Computational Biology Researcher"
 url              : "https://hayatimar.github.io"
 baseurl          : ""
 repository       : "HayatiMar/hayatimar.github.io"
 
-# Site Author (Sidebar)
+# CRITICAL: Add this line for Academic Pages theme
+remote_theme: "academicpages/academicpages.github.io"
+
+# Site Author (Sidebar) - This is what creates your sidebar
 author:
-  name           : "Maryam Hayati"
-  bio            : "AI and computational biology researcher working on machine learning, infectious disease modeling, and biomedical data."
-  avatar         : "/images/profile.png"
-  email          : "maryam.hayati@gmail.com"
+  name             : "Maryam Hayati"
+  avatar           : "/images/profile.png"
+  bio              : "AI & Computational Biology | Infectious Disease Modeling"
+  location         : "Your City"
+  email            : "maryam.hayati@gmail.com"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/HayatiMar"
+    - label: "Google Scholar"
+      icon: "ai ai-google-scholar"
+      url: "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
 
-  # Academic links
-  github         : "HayatiMar"
-  googlescholar  : "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
-  orcid          : "https://orcid.org/yourorcidurl"
-  pubmed         : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
+# Reading Files
+include:
+  - .htaccess
+  - _pages
+  - files
+exclude:
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - vendor
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - assets/js/plugins
+  - assets/js/_main.js
+  - assets/js/vendor
+  - Capfile
+  - CHANGELOG
+  - config
+  - Gemfile
+  - Gruntfile.js
+  - gulpfile.js
+  - LICENSE
+  - log
+  - node_modules
+  - package.json
+  - Rakefile
+  - README
+  - tmp
+keep_files:
+  - .git
+  - .svn
 
-# Publication categories
-publication_category:
-  books:
-    title: "Books"
-  manuscripts:
-    title: "Journal Articles"
-  conferences:
-    title: "Conference Papers"
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
 
-# Site settings
-teaser            :
-breadcrumbs       : false
-words_per_minute  : 160
-future            : true
-read_more         : "disabled"
-talkmap_link      : false
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
 
 # Collections
 collections:
-  pages:
-    output: true
-    permalink: /:path/
   teaching:
     output: true
     permalink: /:collection/:path/
@@ -58,6 +93,7 @@ collections:
 
 # Defaults
 defaults:
+  # _posts
   - scope:
       path: ""
       type: posts
@@ -68,12 +104,14 @@ defaults:
       comments: true
       share: true
       related: true
+  # _pages
   - scope:
-      path: ""
+      path: "_pages"
       type: pages
     values:
       layout: single
       author_profile: true
+  # _teaching
   - scope:
       path: ""
       type: teaching
@@ -82,6 +120,7 @@ defaults:
       author_profile: true
       share: true
       comments: true
+  # _publications
   - scope:
       path: ""
       type: publications
@@ -90,6 +129,7 @@ defaults:
       author_profile: true
       share: true
       comments: true
+  # _portfolio
   - scope:
       path: ""
       type: portfolio
@@ -98,6 +138,7 @@ defaults:
       author_profile: true
       share: true
       comment: true
+  # _talks
   - scope:
       path: ""
       type: talks
@@ -111,18 +152,17 @@ sass:
   sass_dir: _sass
   style: compressed
 
-# Output
+# Outputting
 permalink: /:categories/:title/
-timezone: Etc/UTC
+timezone: America/Los_Angeles
 
 # Plugins
 plugins:
-  - jekyll-feed
-  - jekyll-gist
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
   - jekyll-redirect-from
-  - jemoji
 
 # Archives
 category_archive:
@@ -131,3 +171,9 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
+
+# HTML Compression
+compress_html:
+  clippings: all
+  ignore:
+    envs: development
