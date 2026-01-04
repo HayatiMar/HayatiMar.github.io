@@ -3,7 +3,6 @@ layout: about
 title: About
 permalink: /
 author_profile: true
-author: maryam
 ---
 
 I am an AI and computational biology researcher specializing in machine learning,
