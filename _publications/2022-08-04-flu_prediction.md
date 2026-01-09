@@ -18,11 +18,11 @@ Our research introduces a novel machine learning framework that shifts the focus
 
 - Feature Engineering: We trained our models on a combination of:
 
-  -Topological Features: Quantitative measures of tree branching patterns and "balance" that signal early lineage expansion.
+  - Topological Features: Quantitative measures of tree branching patterns and "balance" that signal early lineage expansion.
 
-  -Genetic Markers: Mutations at known epitope sites (the regions of the virus targeted by the human immune system).
+  - Genetic Markers: Mutations at known epitope sites (the regions of the virus targeted by the human immune system).
 
-  -Temporal Data: The timing and velocity of lineage emergence.
+  - Temporal Data: The timing and velocity of lineage emergence.
 
 ## Key Results & Performance
 Using nearly 40 years of H3N2 data and a decade of H1N1 data, the model demonstrated high predictive power:
